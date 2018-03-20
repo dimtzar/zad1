@@ -1,0 +1,5 @@
+<%= form_for @word, url:{action: "update"} do |word| %>
+	<%= word.text_field :en %>
+	<%= word.text_field :ru %>
+	<%= submit_tag "Update"%>
+	<% end %>

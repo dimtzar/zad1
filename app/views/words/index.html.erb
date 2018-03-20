@@ -1,0 +1,19 @@
+<table border="1" width="100%">
+  <%= link_to "Add new word", controller: "words", action: "new", method: "post" %>
+  <thead>
+    <tr>
+      <th>EN</th>
+      <th>RU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.en %></td>
+        <td><%= word.ru %></td>
+        <td><%= link_to "delete", {action: "destroy", id: word.id},  method: :delete %>,
+        <%= link_to "update", {action: "show", id: word.id},  method: :get %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
